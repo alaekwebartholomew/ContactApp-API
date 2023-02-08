@@ -8,9 +8,9 @@ import jakarta.persistence.Id;
 public class Contact {
 
     @Id
-    String contactId;
-    String name;
-    String mobileNumber;
+    private String contactId;
+    private String name;
+    private String mobileNumber;
 
     public Contact() {
     }
