@@ -13,7 +13,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("user")
-    public List<UserProfile> working(){
+    public List<UserProfile> getUsers(){
         return userService.getAllUser();
     }
 
