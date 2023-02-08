@@ -30,4 +30,8 @@ public class UserService {
     public void update(UserProfile userProfile) {
         userRepository.save(userProfile);
     }
+
+    public void delete(String id) {
+        userRepository.deleteById(id);
+    }
 }
