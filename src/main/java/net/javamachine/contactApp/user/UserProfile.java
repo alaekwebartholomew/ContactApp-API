@@ -7,25 +7,25 @@ import jakarta.persistence.Id;
 public class UserProfile {
 
     @Id
-    private String userName;
+    private String id;
     private String firstName;
     private String lastName;
 
     public UserProfile() {
     }
 
-    public UserProfile(String userName, String firstName, String lastName) {
-        this.userName = userName;
+    public UserProfile(String id, String firstName, String lastName) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getId() {
+        return id;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFirstName() {
