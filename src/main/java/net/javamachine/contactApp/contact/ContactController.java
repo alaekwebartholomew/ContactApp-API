@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class ContactController {
@@ -17,18 +18,18 @@ public class ContactController {
     }
 
     @GetMapping("contact/{id}")
-    public String getContact(@PathVariable String id){
+    public Optional<Contact> getContact(@PathVariable String id){
         return contactService.getContactById(id);
     }
 
     @PostMapping("contact")
     public void createContact(@RequestBody Contact contact){
-        contactService.saveContact();
+        contactService.saveContact(contact);
     }
 
     @PutMapping("contact/{id}")
     public void updateContact(@PathVariable String id, @RequestBody Contact contact){
-        contactService.update(id);
+        contactService.update(id, contact);
     }
 
     @DeleteMapping("contact/{id}")

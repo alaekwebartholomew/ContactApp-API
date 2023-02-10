@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class ContactService {
 
@@ -15,15 +16,19 @@ public class ContactService {
         return contacts;
     }
 
-    public String getContactById(String id) {
+    public Optional<Contact> getContactById(String id) {
+        return contactRepository.findById(id);
     }
 
-    public void saveContact() {
+    public void saveContact(Contact contact) {
+        contactRepository.save(contact);
     }
 
-    public void update(String id) {
+    public void update(String id, Contact contact) {
+        contactRepository.save(contact);
     }
 
     public void delete(String id) {
+        contactRepository.deleteById(id);
     }
 }
