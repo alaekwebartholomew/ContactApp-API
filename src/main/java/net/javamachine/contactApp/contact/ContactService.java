@@ -14,4 +14,16 @@ public class ContactService {
         contactRepository.findAll().forEach(contacts::add);
         return contacts;
     }
+
+    public String getContactById(String id) {
+    }
+
+    public void saveContact() {
+    }
+
+    public void update(String id) {
+    }
+
+    public void delete(String id) {
+    }
 }
