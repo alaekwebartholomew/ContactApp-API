@@ -12,9 +12,9 @@ public class ContactService {
 
     @Autowired
     private ContactRepository contactRepository;
-    public List<Contact> getContacts() {
+    public List<Contact> getContacts(String userProfileId) {
         List<Contact> contacts = new ArrayList<>();
-        contactRepository.findAll().forEach(contacts::add);
+        contactRepository.findByUserProfileId(userProfileId).forEach(contacts::add);
         return contacts;
     }
 

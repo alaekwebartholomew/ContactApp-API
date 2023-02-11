@@ -12,27 +12,27 @@ public class ContactController {
     @Autowired
     private ContactService contactService;
 
-    @GetMapping("contact")
-    public List<Contact> getAllContact(){
-        return contactService.getContacts();
+    @GetMapping("user/{id)/contact")
+    public List<Contact> getAllContact(@PathVariable String userProfileId){
+        return contactService.getContacts(userProfileId);
     }
 
-    @GetMapping("contact/{id}")
+    @GetMapping("user/{id}/contact/{id}")
     public Optional<Contact> getContact(@PathVariable String id){
         return contactService.getContactById(id);
     }
 
-    @PostMapping("contact")
+    @PostMapping("user/{id}/contact")
     public void createContact(@RequestBody Contact contact){
         contactService.saveContact(contact);
     }
 
-    @PutMapping("contact/{id}")
+    @PutMapping("user/{id}/contact/{id}")
     public void updateContact(@PathVariable String id, @RequestBody Contact contact){
         contactService.update(id, contact);
     }
 
-    @DeleteMapping("contact/{id}")
+    @DeleteMapping("user/{id}/contact/{id}")
     public void deleteContact(@PathVariable String id){
         contactService.delete(id);
     }
