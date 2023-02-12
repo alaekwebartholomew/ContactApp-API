@@ -14,6 +14,7 @@ public class Contact {
     private String name;
     private String mobileNumber;
 
+    // Relationship
     @ManyToOne
     private UserProfile userProfile;
 
